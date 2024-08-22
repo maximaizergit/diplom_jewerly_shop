@@ -1,0 +1,38 @@
+//====================================================================================================
+.page404 {padding: 80px 0px;}
+.page404-body {max-width: 690px;margin: 0px auto;text-align: center;}
+.page404__title {@extend .agc;font-size: 200px;color: #415271;padding: 0px 190px;position: relative;margin: 0px 0px 30px 0px;
+	&:before{
+		content:'';
+		background: url('../img/404/chair.png') 0 0 no-repeat;
+		width: 190px;height: 190px;
+		position: absolute;
+		left: 0;
+		top: 0;
+	}
+	&:after{
+		content:'';
+		background: url('../img/404/chair_2.png') 0 0 no-repeat;
+		width: 190px;height: 190px;
+		position: absolute;
+		right: 0;
+		top: 0;
+	}
+}
+.page404__text {font-size: 18px;line-height: 24px;
+	a{color: #415271;text-decoration: underline;
+		&:hover{
+			text-decoration: none;
+		}
+	}
+}
+@media (max-width:767px){
+	.page404 {padding: 20px 0px 40px 0px;}
+	.page404__title {padding: 0;font-size: 190px;
+		&:before,&:after{display: none;}
+	}
+	.page404__text {font-size: 16px;line-height: 22px;}
+}
+//====================================================================================================
+
+

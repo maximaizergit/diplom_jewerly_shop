@@ -1,0 +1,41 @@
+<?
+$aMenuLinks = Array(
+    Array(
+        "Коллекция1",
+        "/",
+        Array(),
+        Array(),
+        ""
+    ),
+    Array(
+        "Коллекция2",
+        "/",
+        Array(),
+        Array(),
+        ""
+    ),
+    Array(
+        "Коллекция3",
+        "/",
+        Array(),
+        Array(),
+        ""
+    ),
+    Array(
+        "Коллекция4",
+        "/",
+        Array(),
+        Array(),
+        ""
+    ),
+    Array(
+        "Коллекция5",
+        "/",
+        Array(),
+        Array(),
+        ""
+    ),
+
+
+);
+?>

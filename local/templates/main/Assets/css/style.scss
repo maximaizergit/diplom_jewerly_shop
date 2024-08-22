@@ -1,0 +1,261 @@
+//<МИКСИНЫ>===============================================================================================
+@mixin anim($time,$delay){-webkit-transition: all $time ease $delay;-moz-transition: all $time ease $delay;-ms-transition: all $time ease $delay;-o-transition: all $time ease $delay;transition: all $time ease $delay;}
+@mixin rotate($deg){-moz-transform: rotate($deg);-ms-transform: rotate($deg);-webkit-transform: rotate($deg);-o-transform: rotate($deg);transform: rotate($deg);}
+@mixin scale($num){-moz-transform: scale($num);-ms-transform: scale($num);-webkit-transform: scale($num);-o-transform: scale($num);transform: scale($num);}
+@mixin skew($num){-webkit-transform: skewX($num);-moz-transform: skewX($num);-ms-transform: skewX($num);-o-transform: skewX($num);transform: skewX($num);}
+@mixin cnt($h){display: flex;flex-direction: column;height: $h;text-align: center;align-items: stretch;justify-content: center;}
+@mixin tr($x,$y,$z){transform: translate3d($x, $y, $z);};
+@mixin flexbox() {display: -webkit-box;display: -moz-box;display: -ms-flexbox;display: -webkit-flex;display: flex;font-size: 0;}
+@mixin flexorder($val){-webkit-box-ordinal-group: $val;-moz-box-ordinal-group: $val;-ms-flex-order: $val;-webkit-order: $val;order: $val;}
+//</МИКСИНЫ>===============================================================================================
+
+//<ШРИФТЫ>===============================================================================================
+
+//<Подключаем шрифты>=======================================================================================
+@font-face{font-family:'SFUIDisplay';src:url('../fonts/SFUIDisplay-Light.eot');src:local('☺'),url('../fonts/SFUIDisplay-Light.woff') format('woff'),url('../fonts/SFUIDisplay-Light.ttf') format('truetype'),url('../fonts/SFUIDisplay-Light.svg') format('svg');font-weight:300;font-style:normal;}
+@font-face{font-family:'SFUIDisplay';src:url('../fonts/SFUIDisplay-Regular.eot');src:local('☺'),url('../fonts/SFUIDisplay-Regular.woff') format('woff'),url('../fonts/SFUIDisplay-Regular.ttf') format('truetype'),url('../fonts/SFUIDisplay-Regular.svg') format('svg');font-weight:normal;font-style:normal;}
+@font-face{font-family:'SFUIDisplay';src:url('../fonts/SFUIDisplay-Bold.eot');src:local('☺'),url('../fonts/SFUIDisplay-Bold.woff') format('woff'),url('../fonts/SFUIDisplay-Bold.ttf') format('truetype'),url('../fonts/SFUIDisplay-Bold.svg') format('svg');font-weight:700;font-style:normal;}
+@font-face{font-family:'SFUIDisplay';src:url('../fonts/SFUIDisplay-Heavy.eot');src:local('☺'),url('../fonts/SFUIDisplay-Heavy.woff') format('woff'),url('../fonts/SFUIDisplay-Heavy.ttf') format('truetype'),url('../fonts/SFUIDisplay-Heavy.svg') format('svg');font-weight:800;font-style:normal;}
+@font-face{font-family:'AGCenturion';src:url('../fonts/AGCenturion-Roman.eot');src:local('☺'),url('../fonts/AGCenturion-Roman.woff') format('woff'),url('../fonts/AGCenturion-Roman.ttf') format('truetype'),url('../fonts/AGCenturion-Roman.svg') format('svg');font-weight:normal;font-style:normal;}
+
+//Пример подключения Google
+//@import url('https://fonts.googleapis.com/css?family=Coda');
+//Пример подключения файлов шрифтов
+//@font-face {font-family: 'MuseoSansCyrl';font-weight: normal;font-style: normal;src: url('../fonts/MuseoSansCyrl_1.eot');src: local('☺'), url('../fonts/MuseoSansCyrl_1.woff') format('woff'), url('../fonts/MuseoSansCyrl_1.ttf') format('truetype'), url('../fonts/MuseoSansCyrl_1.svg') format('svg');}
+
+//</Подключаем шрифты>=======================================================================================
+
+//<Иконочные шрифты>==========================================================================================
+@import url('https://use.fontawesome.com/releases/v4.7.0/css/font-awesome-css.min.css');
+@font-face{font-family:'FontAwesome';src:url('https://use.fontawesome.com/releases/v4.7.0/fonts/fontawesome-webfont.eot');src:url('https://use.fontawesome.com/releases/v4.7.0/fonts/fontawesome-webfont.eot?#iefix') format('embedded-opentype'),url('https://use.fontawesome.com/releases/v4.7.0/fonts/fontawesome-webfont.woff2') format('woff2'),url('https://use.fontawesome.com/releases/v4.7.0/fonts/fontawesome-webfont.woff') format('woff'),url('https://use.fontawesome.com/releases/v4.7.0/fonts/fontawesome-webfont.ttf') format('truetype'),url('//use.fontawesome.com/releases/v4.7.0/fonts/fontawesome-webfont.svg#fontawesomeregular') format('svg');font-weight:normal;font-style:normal;}
+//@import url(https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css);
+//</Иконочные шрифты>==========================================================================================
+
+//<Шрифт по умолчанию>==========================================================================================
+$fontfamily:"SFUIDisplay";
+//</Шрифт по умолчанию>==========================================================================================
+
+//</ШРИФТЫ>=======================================================================================================
+
+//<ОБНУЛЕНИЕ, ОБЩИЕ ПАРАМЕТРЫ>===============================================================================================
+$minwidth:320px;
+*{padding: 0px;margin: 0px;border: 0px;}
+*,*:before,*:after{-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;}
+:focus,:active{outline: none;}
+a:focus,a:active{outline: none;}
+aside,nav,footer,header,section{display: block;}
+html,body{height: 100%;margin: 0;padding: 0;min-width: $minwidth;position: relative;width: 100%;color: #000;}
+body{font-size: 100%;line-height: 1;font-size: 14px;font-family: $fontfamily;
+	&.lock{overflow: hidden;}
+}
+input,button,textarea{font-family: $fontfamily;}
+button{cursor: pointer;}
+button::-moz-focus-inner {padding:0;border:0;}
+a, a:visited{text-decoration: none;}
+a:hover{text-decoration: none;}
+ul li{list-style: none;}
+img{vertical-align: top;}
+.clr{clear: both;display: block;}
+.wrapper{width: 100%;min-height: 100%;overflow: hidden;}
+
+@media (max-width:767px){
+	.wrapper{padding: 60px 0px 0px 0px;}
+}
+
+
+.row:after{display: block;content: '';clear: both;}
+.fa{font-family: inherit !important;
+	&:before{display:inline-block;font:normal normal normal 14px/1 FontAwesome;font-size:inherit;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;}
+}
+.rub{
+	&:after{content:'₽';}
+}
+.agc{font-family: 'AGCenturion';}
+//</ОБНУЛЕНИЕ, ОБЩИЕ ПАРАМЕТРЫ>===============================================================================================
+
+//<ОСНОВНАЯ СЕТКА>===========================================================================================================
+.container{max-width: 1246px; margin: 0 auto;position: relative;}
+
+@media (max-width:1260px){
+	.container{max-width: 970px;}
+}
+@media (max-width:992px){
+	.container{max-width: 750px;}
+}
+@media (max-width:767px){
+	.container{max-width: none;padding:0 10px;}
+}
+//</ОСНОВНАЯ СЕТКА>===========================================================================================================
+
+//<ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ>====================================================================================================
+@import "../js/cloudzoom/cloud-zoom.css";
+@import "popover.min.scss";
+@import "header.scss";
+@import "footer.scss";
+@import "popup.scss";
+@import "index.scss";
+@import "catalog.scss";
+@import "product.scss";
+@import "wherebuy.scss";
+@import "text.scss";
+@import "404.scss";
+@import "repair.scss";
+@import "toorder.scss";
+@import "cart.scss";
+@import "checkout.scss";
+//</ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ>====================================================================================================
+
+//<ОСНОВНОЙ БЛОК>====================================================================================================
+.breadcrumbs {}
+.breadcrumbs-body{@include flexbox();font-size: 14px;padding: 20px 0 15px 0;flex-wrap: wrap;}
+.breadcrumbs__link {color: #415271;text-decoration: underline;margin: 0px 0px 5px 0px;
+	&:hover{text-decoration: none;}
+}
+.breadcrumbs__sepp {color: #dbdbdb;margin:0 5px 5px 5px;}
+.breadcrumbs__item {color: #000000;margin: 0px 0px 5px 0px;}
+//====================================================================================================
+.content {margin: 0px 0px 30px 0px;}
+.content-body {@include flexbox();}
+.content-block {width: 100%;flex-grow: 1;padding: 0px 0px 0px 60px;min-width: 0;}
+.content-footer{padding: 0px 0px 0px 257px;}
+@media (max-width:992px){
+	.content-block {padding: 0px 0px 0px 20px;}
+	.content-footer{padding: 0px 0px 0px 0px;}
+}
+@media (max-width:767px){
+	.content-body {display: block;}
+	.content-block {padding: 30px 0px 0px 0px;}
+}
+//====================================================================================================
+.filter {min-width:237px;width: 0;}
+.filter__open.btn-2{display: none;}
+.filter-body {padding: 20px 0px 0px 0px;position: relative;}
+.filter-modules{}
+.filter-module {border-bottom: 2px solid #e8e8e8;padding: 0px 0px 25px 0px;margin: 0px 0px 20px 0px;
+	&:last-child{margin:0px 0px 0px 0px;border: none;padding: 0;}
+}
+.filter__label {font-size: 20px;font-weight: 700;line-height: 24px;margin: 0px 0px 20px 0px;}
+.filter-menu {
+	>li{margin: 0px 0px 15px 0px;
+		&:last-child{margin:0px 0px 0px 0px;}
+	}
+}
+.filter-menu__link {font-size: 16px;color: #000000;line-height: 18px;@include anim(0.3s,0s);
+	span{font-size: 20px;display: inlin-block;vertical-align: middle;margin: 0px 0px 0px 5px;line-height: 18px;@include anim(0.3s,0s);}
+	&:hover{color: #415271;}
+	&.active{color: #415271;
+		span{@include rotate(-180deg);}
+	}
+}
+.filter-submenu {margin: 15px 0px;display: none;
+	li{margin: 0px 0px 10px 12px;
+		&:last-child{margin:0px 0px 0px 12px;}
+	}
+}
+.filter-submenu__link {color: #818181;font-size: 14px;@include anim(0.3s,0s);
+	&:hover{color: #415271;}
+}
+.filter-price {}
+.filter-price-table {margin-bottom: 25px;
+	.cell {
+		&:first-child{padding-right: 15px;position: relative;
+			&:after{content:'-';position: absolute;right: -4px;top: 8px;font-size: 20px;}
+		}
+		&:last-child{padding-left: 15px;}
+		input{height:40px;border: 1px solid #e8e8e8;background-color: #ffffff;text-align: center;font-size: 16px;color: #000;font-weight:400;width: 100%;text-align: center;}
+	}
+}
+.filter-price-range{margin:0 4px 0px 4px;background-color: #c9cecf;height: 5px;position: relative;
+	.ui-slider-range{background-color: #415271;height: 5px;position: relative;}
+	.ui-slider-handle{width:8px;height:22px;border:1px solid #415271;background-color:#ffffff;display:block;position:absolute;top:-9px;margin-left:-4px;cursor:pointer;
+		span{display: none;}
+	}
+}
+.filter-checks{
+	.check{font-size: 16px;margin: 0px 0px 10px 0px;
+		&:last-child{margin:0px 0px 0px 0px;}
+	}
+}
+.filter-footer{text-align: center;padding: 30px 0px 0px 0px;}
+.filter__btn {margin: 0px 0px 10px 0px;}
+.filter-footer__clean {font-size: 14px;text-decoration: underline;color: #415271;}
+
+.filter-results {position:absolute;height:75px;box-shadow:0 1px 15px rgba(42,40,41,0.21);border:1px solid #e8e8e8;background-color:#ffffff;@include flexbox();padding:0px 35px;flex-direction:column;justify-content:center;font-size:16px;bottom:105px;left:130px;white-space:nowrap;
+	&:before{content:'';width:20px;height:20px;@include rotate(-45deg);position:absolute;top:50%;left:-10px;margin-top:-10px;border:1px solid #e8e8e8;border-right:0;border-bottom:0;background-color:#ffffff;}
+}
+.filter-results__quantity {margin: 0px 0px 4px 0px;}
+.filter-results__link {color: #415271;text-decoration: underline;}
+
+@media (max-width:767px){
+	.filter {width: 100%;min-width: 0;}
+	.filter__open.btn-2{display: block;
+		&:hover{background-color: #fff;color: #000;}
+		&.active{background-color: #6b83ad;color: #fff;}
+	}
+	.filter-results {display: none;}
+}
+//====================================================================================================
+.getprice {padding: 100px 0;}
+.getprice__title {margin: 0px 0px 60px 0px;}
+.getprice-form {max-width: 1035px;margin: 0px auto;@include flexbox();}
+.getprice-form-fields {min-width:355px;padding: 0px 60px 0px 0px;@include flexbox();flex-direction: column;justify-content: space-between;}
+.getprice-form-file {@include flexbox();border: 2px dashed #a7acb5;height: 275px;width: 100%;flex-grow: 1;position: relative;
+	input{position: absolute;width: 100%;height: 100%;top: 0;left: 0;opacity: 0;font-size: 0;cursor: pointer;}
+}
+.getprice-form-file-body {margin: auto;text-align: center;}
+.getprice-form-file__btn {}
+.getprice-form-file__text {font-size: 20px;color: #a7acb5;padding: 20px 0px 0px 0px;}
+
+@media (max-width:992px){
+	.getprice {padding: 60px 0;}
+	.getprice-form-fields {min-width: 300px;padding: 0px 20px 0px 0px;}
+}
+@media (max-width:767px){
+	.getprice {padding: 30px 0;}
+	.getprice__title {margin: 0px 0px 30px 0px;}
+	.getprice-form {flex-direction: column;}
+	.getprice-form-file {height: 200px;}
+	.getprice-form-fields {@include flexorder(2);min-width: 0;margin: 20px 0px 0px 0px;padding: 0px 0px 0px 0px;height: 200px;
+	}
+}
+//====================================================================================================
+.pagging {@include flexbox();justify-content: center;align-items: center;padding: 65px 0px 60px 0px;}
+.pagging__arrow {width: 60px;height: 60px;
+	&:first-child{background: url('../img/icons/p-left.svg') 0 0 no-repeat;background-size: 100%;}
+	&:last-child{background: url('../img/icons/p-right.svg') 0 0 no-repeat;background-size: 100%;}
+}
+.pagging-list {margin: 0px 50px;@include flexbox();}
+.pagging__link {border-radius:50%;width:40px;height:40px;line-height:40px;text-align:center;color:#818181;font-size:20px;display:block;
+	&.active{color: #fff;background-color: #415271;}
+}
+@media (max-width:767px){
+	.pagging {padding: 35px 0;}
+	.pagging-list {margin: 0px 20px;}
+	.pagging__arrow {width: 30px;height: 30px;}
+	.pagging__link {width: 30px;height: 30px;line-height: 30px;font-size: 16px;}
+}
+//====================================================================================================
+.mapmodule {}
+.mapmodule__title {margin: 0px 0px 40px 0px;}
+
+.map{height: 500px;}
+@media (max-width:767px){
+	.map{height: 250px;}
+}
+//====================================================================================================
+.baloon{max-width: 325px !important;}
+.baloon-style{display: none;}
+.baloon-content{background-color:#fff;border:1px solid #dcdcdc;padding:25px;left:0!important;width:100%!important;overflow:visible!important;
+	&:after{content:'';width:30px;height:30px;left:50%;margin:0px 0px 0px -20px;background-color:#fff;border-left:1px solid #dcdcdc;border-top:1px solid #dcdcdc;position:absolute;@include rotate(-135deg);bottom:-15px;}
+}
+.baloon-close{top: 18px !important;}
+
+@media (max-width:767px){
+	.baloon{max-width: 280px !important;}
+}
+//</ОСНОВНОЙ БЛОК>====================================================================================================
+
+//<ПОДКЛЮЧЕНИЕ ФАЙЛОВ UI СТИЛЕЙ, ФОРМ И ГОТОВЫХ КЛАССОВ>====================================================================================================
+@import "forms.scss";
+@import "ui.scss";
+//</ПОДКЛЮЧЕНИЕ ФАЙЛОВ UI СТИЛЕЙ, ФОРМ И ГОТОВЫХ КЛАССОВ>====================================================================================================

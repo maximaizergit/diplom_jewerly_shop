@@ -1,0 +1,1 @@
+<?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/phpdevorg.parser/admin/parser_start.php");?>

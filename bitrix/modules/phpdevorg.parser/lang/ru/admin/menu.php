@@ -1,0 +1,3 @@
+<?
+$MESS["YAUHENI_DISCOUNT"] = "Парсер";
+$MESS["YAUHENI_DISCOUNT_DISCOUNT"] = "Скидки";?>

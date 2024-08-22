@@ -1,0 +1,8 @@
+/*Menu icon*/
+.export_onliner_menu_icon {
+    background: url(/local/modules/phpdevorg.visualdiscounts/install/images/phpdevorg.visualdiscounts/sale2.ico) no-repeat center!important;
+}
+
+.border-double {
+    border-style: double;
+}

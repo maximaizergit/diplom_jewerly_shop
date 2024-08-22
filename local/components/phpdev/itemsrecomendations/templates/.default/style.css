@@ -1,0 +1,124 @@
+
+
+input[type='text']{
+    height: 25px;
+    font-size: 14px;
+}
+.main-buttons-wrapper{
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    flex-direction: column;
+    margin-bottom: 10px;
+    flex-grow: 1;
+}
+
+.personal-wrapper{
+    display: flex;
+    width: 100%;
+
+}
+
+.photo-wrapper{
+    padding-left: 30px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+
+.image-container {
+    position: relative;
+    display: inline-block;
+}
+
+.delete-button {
+    position: absolute;
+    top: 10px; /* расположение кнопки в верхнем углу */
+    right: 10px; /* расположение кнопки в правом углу */
+    width: 20px;
+    height: 20px;
+    background-color: red; /* цвет фона кнопки */
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.delete-button::before, .delete-button::after {
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 100%;
+    background-color: white; /* цвет крестика */
+}
+
+.delete-button::before {
+    transform: rotate(45deg);
+}
+
+.delete-button::after {
+    transform: rotate(-45deg);
+}
+
+
+.input-file {
+    position: relative;
+
+}
+.input-file span {
+    position: relative;
+    cursor: pointer;
+    outline: none;
+    text-decoration: none;
+    font-size: 14px;
+    vertical-align: middle;
+    color: rgb(255 255 255);
+    text-align: center;
+    border-radius: 4px;
+    background-color: #419152;
+    line-height: 22px;
+    height: 40px;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    border: none;
+    margin: 0;
+    transition: background-color 0.2s;
+}
+.input-file input[type=file] {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+    display: block;
+    width: 0;
+    height: 0;
+}
+
+/* Focus */
+.input-file input[type=file]:focus + span {
+    box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+}
+
+/* Hover/active */
+.input-file:hover span {
+    background-color: #59be6e;
+}
+.input-file:active span {
+    background-color: #2E703A;
+}
+
+/* Disabled */
+.input-file input[type=file]:disabled + span {
+    background-color: #eee;
+}
+
+.album-btns-wrapper{
+    display: flex;
+    flex-direction: column;
+    margin-top: 40px;
+}
+.btn-album{
+    width: max-content;
+
+}

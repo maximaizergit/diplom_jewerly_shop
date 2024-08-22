@@ -1,0 +1,12 @@
+//====================================================================================================
+.wherebuy {}
+.wherebuy__title {margin: 0px 0px 60px 0px;}
+.wherebuy__text {max-width: 600px;margin: 0px auto 50px auto;font-size: 18px;line-height: 24px;}
+
+@media (max-width:767px){
+	.wherebuy__title {margin: 0px 0px 20px 0px;}
+	.wherebuy__text {margin: 0px auto 20px auto;font-size: 16px;line-height: 22px;}
+}
+//====================================================================================================
+
+
